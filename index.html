@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cyber Domino - NACIM BOURARA</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- مكتبة الاتصال المباشر عبر الروابط -->
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- الشريط العلوي الاحترافي -->
+        <header class="header">
+            <div class="logo">⚡ CYBER DOMINO</div>
+            <div id="game-status" class="status">جاري الاتصال بالسيرفر...</div>
+            <div class="dev">By NACIM BOURARA</div>
+        </header>
+
+        <!-- لوحة مشاركة رابط اللعبة (مثل App Store) -->
+        <div class="connection-box" id="conn-box">
+            <span id="my-id-display">جارٍ تجهيز رابط التحدي...</span>
+            <button onclick="copyInviteLink()">مشاركة الرابط 🔗</button>
+        </div>
+
+        <!-- طاولة اللعب -->
+        <div class="board-area" id="board-area">
+            <div class="board-placeholder">انتظار انضمام الصديق لبدء الطاولة...</div>
+        </div>
+
+        <!-- معلومات الطاولة والبنك -->
+        <div class="table-info">
+            <span id="p1-score">قطعك: 7</span> | 
+            <span id="p2-score">قطع الخصم: 7</span> | 
+            <button id="draw-btn" onclick="drawTile()" disabled>سحب من البنك 📥</button>
+        </div>
+
+        <!-- يد اللاعب الحالي -->
+        <div class="player-hand-section">
+            <div class="section-title" id="hand-title">قطعك في اليد:</div>
+            <div class="hand-tiles" id="player-hand"></div>
+        </div>
+
+        <!-- نظام الشات المتكامل والمميز -->
+        <div class="chat-section">
+            <div class="chat-messages" id="chat-box">
+                <div class="msg system">💬 أهلاً بك في شات Cyber Domino. اكتب رسالتك واستفز خصمك أثناء اللعب!</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="اكتب رسالة..." maxlength="50" disabled>
+                <button id="send-btn" onclick="sendCustomMessage()" disabled>إرسال 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

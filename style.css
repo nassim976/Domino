@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    margin: 0;
+    background-color: #08080c;
+    color: #00f0ff;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 700px;
+    height: 100vh;
+    max-height: 460px;
+    background: #12121a;
+    border: 2px solid #00f0ff66;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    border-bottom: 1px solid #222233;
+    padding-bottom: 5px;
+}
+
+.logo {
+    font-weight: bold;
+    color: #ff007f;
+    text-shadow: 0 0 10px #ff007faa;
+}
+
+.status {
+    color: #f5c542;
+    background: #1e1e2f;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.dev {
+    color: #888;
+    font-size: 10px;
+}
+
+/* صندوق رابط الدعوة */
+.connection-box {
+    background: #1a1a2e;
+    border: 1px solid #00f0ff88;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+}
+
+.connection-box button {
+    background: #00f0ff;
+    color: #08080c;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* طاولة اللعب */
+.board-area {
+    flex: 1.2;
+    background: #060609;
+    border: 1px dashed #333344;
+    border-radius: 8px;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 0 10px;
+}
+
+.board-placeholder {
+    color: #555;
+    font-size: 12px;
+    margin: auto;
+}
+
+.table-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    background: #161622;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+#draw-btn {
+    background: #ff007f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#draw-btn:disabled {
+    background: #333;
+    cursor: not-allowed;
+}
+
+/* يد اللاعب */
+.player-hand-section {
+    background: #161622;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-size: 10px;
+    color: #aaa;
+    margin-bottom: 3px;
+}
+
+.hand-tiles {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+
+.domino-tile {
+    background: #1a1a2e;
+    border: 2px solid #00f0ff;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.domino-tile:active {
+    transform: scale(0.92);
+    background: #00f0ff;
+    color: #12121a;
+}
+
+/* قسم الشات المميز */
+.chat-section {
+    background: #0a0a10;
+    border: 1px solid #222233;
+    border-radius: 8px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.chat-messages {
+    height: 45px;
+    overflow-y: auto;
+    background: #12121a;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.msg {
+    color: #00f0ff;
+    line-height: 1.4;
+}
+
+.msg.system {
+    color: #888;
+    font-style: italic;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 6px;
+}
+
+#chat-input {
+    flex: 1;
+    background: #1a1a2e;
+    border: 1px solid #444455;
+    border-radius: 6px;
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 11px;
+    outline: none;
+}
+
+#chat-input:focus {
+    border-color: #00f0ff;
+}
+
+#send-btn {
+    background: #ff007f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#send-btn:disabled, #chat-input:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
